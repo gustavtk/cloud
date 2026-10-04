@@ -19,6 +19,20 @@ These are in `../Banner-02-Hook-Options/`. The artwork, copy, CTA and contact de
 - **B: One team. Start. Shield. Support.** An S alliteration: start your website, shield it, support it.
 - **C: One team. Ready. Safe. Looked after.** Plain words that describe what the owner gets.
 
+## Round 2: bold hooks
+
+These are in `../Round-2-Bold-Hooks/`. Each one is built around a moment business owners recognise straight away. They use the same system as round 1: brand statement, contact row, logo, "3" watermark and the 80 px safe area.
+
+| # | Hook | The moment it plays on | CTA |
+|---|------|------------------------|-----|
+| R2-01 | **Going up? Press 3.** | A lift panel where floor 1 is Build, floor 2 is Secure and floor 3 is Manage. The lift's display shows the 3 from the logo. | Take the lift: message us |
+| R2-02 | **They built your website… Then stopped picking your calls?** | A call log with five days of unanswered calls to "Web designer", and then 3ple Lift replies | Call us. We pick up. |
+| R2-03 | **Your business deserves more than a WhatsApp status.** | A status post ("New stock! DM to order") becomes a proper website with products and Order buttons | Get your own website |
+| R2-04 | **Before customers call, they search. What will they find?** | A search bar with two results: "This site can't be reached" and a fresh site with Call and Message buttons | Make it a great first look |
+| R2-05 | **A broken website is a shop with its shutters down. We'll lift them.** | A shopfront whose shutter is rolling up with three brand chevrons, and an "Open again" sign | Get your website back up |
+
+The source files are `banner-r2-0X_*.svg`, and the generator is `build/round2.mjs`.
+
 ## Files
 
 - `banner-0X_*.svg` are the layered sources. You can open them in Figma, Illustrator, Inkscape or a browser. Each one has five named top-level groups:

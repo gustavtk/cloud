@@ -9,6 +9,7 @@ import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { svgDoc, W, H, SAFE, BRAND_STATEMENT, CONTACT } from './banners.mjs';
 import { BANNERS, VARIANTS } from './compositions.mjs';
+import { ROUND2 } from './round2.mjs';
 
 const require = createRequire(import.meta.url);
 let chromium;
@@ -113,7 +114,7 @@ function qaInPage({ SAFE, W, H }) {
   for (const b of blocks) for (const il of illoTexts) if (hit(b, il, 0)) issues.push(`overlap with illustration: ${b.id} × ${il.id}`);
   const allText = [...document.querySelectorAll('text')].map((t) => t.textContent.replace(/\s+/g, ' ').trim());
   const minFont = Math.min(...[...document.querySelectorAll('#layer-text text, #layer-contact text')].map((t) => parseFloat(getComputedStyle(t).fontSize)));
-  return { issues: [...new Set(issues)], allText, minFont, fontsOk: document.fonts.check("700 40px 'Bricolage Grotesque'") && document.fonts.check("400 20px 'Figtree'") };
+  return { issues: [...new Set(issues)], allText, minFont, fontsOk: ['Bricolage Grotesque', 'Figtree'].every((fam) => [...document.fonts].some((f) => f.family.replace(/["']/g, '') === fam && f.status === 'loaded')) };
 }
 
 const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined });
@@ -121,7 +122,7 @@ const page = await browser.newPage({ viewport: { width: W, height: H }, deviceSc
 let failures = 0;
 const report = [];
 
-for (const make of [...BANNERS, ...VARIANTS]) {
+for (const make of [...BANNERS, ...VARIANTS, ...ROUND2]) {
   const b = make();
   const svgPath = path.join(SRC, `${b.id}_${b.slug}.svg`);
   fs.writeFileSync(svgPath, svgDoc({ id: b.id, title: b.title, layers: b.layers }));
@@ -139,7 +140,7 @@ for (const make of [...BANNERS, ...VARIANTS]) {
   if (!qa.fontsOk) qa.issues.push('fonts did not load');
   const pngDir = b.outDir ? path.join(OUT, b.outDir) : OUT;
   fs.mkdirSync(pngDir, { recursive: true });
-  const png = path.join(pngDir, `3ple-Lift-Banner-${b.id.slice(-2)}_${b.slug}.png`);
+  const png = path.join(pngDir, `3ple-Lift-${b.round ? b.round + '-' : ''}Banner-${b.id.slice(-2)}_${b.slug}.png`);
   await page.screenshot({ path: png, clip: { x: 0, y: 0, width: W, height: H } });
   report.push({ banner: b.id, png: path.basename(png), minFontPx: qa.minFont, issues: qa.issues, text: joined });
   failures += qa.issues.length;
