@@ -178,7 +178,7 @@ function b03(logoHref) {
 }
 
 // ---------------------------------------------------------------- 04
-// "Your shop has a padlock. Does your website?" Night-time scene, website as the padlock.
+// "Your shop has a padlock. Your website needs one too." Night-time scene, website as the padlock.
 function b04(logoHref) {
   const stars = [
     [930, 140, 2.5], [1010, 96, 1.8], [1480, 150, 2.2], [1330, 98, 1.6], [880, 600, 1.8], [1530, 560, 2], [900, 360, 1.5], [1180, 120, 1.4], [640, 120, 1.6], [760, 90, 2],
@@ -227,14 +227,14 @@ function b04(logoHref) {
   const text = `
     ${statement({ x: 1520, y: 80, align: 'right', theme: 'dark' })}
     ${lines({ id: 'kicker', cls: 'hl', items: ['Your shop has a padlock.'], x: 80, y: 236, size: 50, lh: 50, fill: C.peach, ls: -1, weight: 700 })}
-    ${lines({ id: 'headline', cls: 'hl', items: [{ t: 'Does your', fill: C.cream }, { t: 'website?', fill: C.mint }], x: 80, y: 354, size: 118, lh: 116, ls: -3, weight: 700 })}
+    ${lines({ id: 'headline', cls: 'hl', items: [{ t: 'Your website', fill: C.cream }, { t: 'needs one too.', fill: C.mint }], x: 80, y: 350, size: 106, lh: 114, ls: -3, weight: 700 })}
     ${lines({ id: 'support', items: ['New website or existing one, we help keep it safe', 'with protection, regular updates and backups.', 'And because we keep looking after it, help is', 'just a message away if anything goes wrong.'], x: 80, y: 534, size: 27, lh: 38, fill: C.cream })}
     ${cta({ x: 80, y: 678, label: 'Ask about website protection', theme: 'mint' })}`;
 
   return {
     id: 'banner-04',
-    slug: 'Does-Your-Website-Have-A-Padlock',
-    title: '3ple Lift: Your shop has a padlock. Does your website?',
+    slug: 'Your-Website-Needs-A-Padlock-Too',
+    title: '3ple Lift: Your shop has a padlock. Your website needs one too.',
     layers: { background, illustration, logo: logoSlot({ x: 104, y: 94, h: 50, w: 232, chip: true, logoHref }), text, contact: contact({ x: 1520, y: 818 - 22, align: 'right', theme: 'dark', gap: 40 }) },
   };
 }

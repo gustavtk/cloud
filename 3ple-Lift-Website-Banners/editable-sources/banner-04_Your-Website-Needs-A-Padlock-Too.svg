@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="banner-04" width="1600" height="900" viewBox="0 0 1600 900">
-  <title>3ple Lift: Your shop has a padlock. Does your website?</title>
+  <title>3ple Lift: Your shop has a padlock. Your website needs one too.</title>
   <style>
   @font-face { font-family: 'Bricolage Grotesque'; font-weight: 700; src: url('fonts/BricolageGrotesque-Bold.ttf'); }
   @font-face { font-family: 'Figtree'; font-weight: 400; src: url('fonts/Figtree-Regular.ttf'); }
@@ -73,7 +73,7 @@
     </g>
   </g>
     <g id="kicker" data-qa="text"><text id="kicker-line1" class="hl" x="80" y="236" font-size="50" font-weight="700" fill="#E8B89C" text-anchor="start" letter-spacing="-1">Your shop has a padlock.</text></g>
-    <g id="headline" data-qa="text"><text id="headline-line1" class="hl" x="80" y="354" font-size="118" font-weight="700" fill="#EDE7DE" text-anchor="start" letter-spacing="-3">Does your</text><text id="headline-line2" class="hl" x="80" y="470" font-size="118" font-weight="700" fill="#A3DCD4" text-anchor="start" letter-spacing="-3">website?</text></g>
+    <g id="headline" data-qa="text"><text id="headline-line1" class="hl" x="80" y="350" font-size="106" font-weight="700" fill="#EDE7DE" text-anchor="start" letter-spacing="-3">Your website</text><text id="headline-line2" class="hl" x="80" y="464" font-size="106" font-weight="700" fill="#A3DCD4" text-anchor="start" letter-spacing="-3">needs one too.</text></g>
     <g id="support" data-qa="text"><text id="support-line1" class="ft" x="80" y="534" font-size="27" font-weight="400" fill="#EDE7DE" text-anchor="start" letter-spacing="0">New website or existing one, we help keep it safe</text><text id="support-line2" class="ft" x="80" y="572" font-size="27" font-weight="400" fill="#EDE7DE" text-anchor="start" letter-spacing="0">with protection, regular updates and backups.</text><text id="support-line3" class="ft" x="80" y="610" font-size="27" font-weight="400" fill="#EDE7DE" text-anchor="start" letter-spacing="0">And because we keep looking after it, help is</text><text id="support-line4" class="ft" x="80" y="648" font-size="27" font-weight="400" fill="#EDE7DE" text-anchor="start" letter-spacing="0">just a message away if anything goes wrong.</text></g>
     <g id="cta" data-qa="cta" data-flow="0" data-x="80" data-align="left">
     <g class="item" data-pill="38,12" transform="translate(118.00 0)">
