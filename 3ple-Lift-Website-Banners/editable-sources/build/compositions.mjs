@@ -59,7 +59,7 @@ function b01(logoHref) {
 
 // Banner 02 headline: "One team." then the three services as three verdicts, each
 // marked in the colour of its Venn circle (Build = mint, Secure = mauve, Manage = peach).
-function serviceHeadline(X) {
+function serviceHeadline(X, words) {
   const size = 92, base = 290, lh = 92;
   const word = (id, t, y, fill) => `<g class="item">
       <rect class="highlight" data-hl-for="${id}" data-pad="8" x="0" y="${y - 22}" width="10" height="30" rx="15" fill="${fill}" opacity="0.85"/>
@@ -68,18 +68,18 @@ function serviceHeadline(X) {
   return `<g id="headline" data-qa="text">
     <text id="headline-line1" class="hl" x="${X}" y="${base}" font-size="${size}" font-weight="700" fill="${C.green}" letter-spacing="-2.5">One team.</text>
     <g id="headline-line2" data-flow="26" data-x="${X}" data-align="left">
-      ${word('headline-built', 'Built.', base + lh, C.mint)}
-      ${word('headline-secured', 'Secured.', base + lh, C.mauve)}
+      ${word('headline-word1', words[0], base + lh, C.mint)}
+      ${word('headline-word2', words[1], base + lh, C.mauve)}
     </g>
     <g id="headline-line3" data-flow="0" data-x="${X}" data-align="left">
-      ${word('headline-sorted', 'Sorted.', base + lh * 2, C.peach)}
+      ${word('headline-word3', words[2], base + lh * 2, C.peach)}
     </g>
   </g>`;
 }
 
 // ---------------------------------------------------------------- 02
 // "One team. One number to call." Build, Secure and Manage overlap into one team.
-function b02(logoHref) {
+function b02(logoHref, hook = { words: ['Built.', 'Secured.', 'Sorted.'], slug: 'One-Team-Built-Secured-Sorted' }) {
   const r = 172;
   const circles = [
     { cx: 292, cy: 352, fill: C.mint, label: 'Build', sub: ['New websites', '& improvements'], ic: 'code', lx: 210, ly: 300 },
@@ -113,14 +113,15 @@ function b02(logoHref) {
   const X = 830;
   const text = `
     ${statement({ x: X, y: 118, align: 'left' })}
-    ${serviceHeadline(X)}
+    ${serviceHeadline(X, hook.words)}
     ${lines({ id: 'support', items: ['Stop chasing different people for design,', 'hosting and fixes. We build your website,', 'help keep it safe and look after it afterward.'], x: X, y: 548, size: 28, lh: 40, fill: C.ink })}
     ${cta({ x: X, y: 656, label: 'Talk to our team' })}`;
 
   return {
     id: 'banner-02',
-    slug: 'One-Team-Built-Secured-Sorted',
-    title: '3ple Lift: One team. Built. Secured. Sorted.',
+    slug: hook.slug,
+    outDir: hook.outDir,
+    title: `3ple Lift: One team. ${hook.words.join(' ')}`,
     layers: { background, illustration, logo: logoSlot({ x: 80, y: 82, logoHref }), text, contact: contact({ x: 80, y: 790 }) },
   };
 }
@@ -285,3 +286,11 @@ function b05(logoHref) {
 }
 
 export const BANNERS = [b01, b02, b03, b04, b05];
+
+// Alternative hooks for banner 02: identical artwork and copy, only the three words change.
+const HOOK_DIR = 'Banner-02-Hook-Options';
+export const VARIANTS = [
+  { words: ['Launch.', 'Lock.', 'Look after.'], slug: 'Hook-A_One-Team-Launch-Lock-Look-After' },
+  { words: ['Start.', 'Shield.', 'Support.'], slug: 'Hook-B_One-Team-Start-Shield-Support' },
+  { words: ['Ready.', 'Safe.', 'Looked after.'], slug: 'Hook-C_One-Team-Ready-Safe-Looked-After' },
+].map((hook) => (logoHref) => b02(logoHref, { ...hook, outDir: HOOK_DIR }));

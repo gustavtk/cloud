@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="banner-02" width="1600" height="900" viewBox="0 0 1600 900">
-  <title>3ple Lift: One team. Built. Secured. Sorted.</title>
+  <title>3ple Lift: One team. Launch. Lock. Look after.</title>
   <style>
   @font-face { font-family: 'Bricolage Grotesque'; font-weight: 700; src: url('fonts/BricolageGrotesque-Bold.ttf'); }
   @font-face { font-family: 'Figtree'; font-weight: 400; src: url('fonts/Figtree-Regular.ttf'); }
@@ -68,18 +68,18 @@
     <text id="headline-line1" class="hl" x="830" y="290" font-size="92" font-weight="700" fill="#025A4E" letter-spacing="-2.5">One team.</text>
     <g id="headline-line2" data-flow="26" data-x="830" data-align="left">
       <g class="item" transform="translate(830.00 0)">
-      <rect class="highlight" data-hl-for="headline-word1" data-pad="8" x="-8.00" y="360" width="232.50" height="30" rx="15" fill="#A3DCD4" opacity="0.85"/>
-      <text id="headline-word1" class="hl" x="0" y="382" font-size="92" font-weight="700" fill="#025A4E" letter-spacing="-2.5">Built.</text>
+      <rect class="highlight" data-hl-for="headline-word1" data-pad="8" x="-8.00" y="360" width="347.00" height="30" rx="15" fill="#A3DCD4" opacity="0.85"/>
+      <text id="headline-word1" class="hl" x="0" y="382" font-size="92" font-weight="700" fill="#025A4E" letter-spacing="-2.5">Launch.</text>
     </g>
-      <g class="item" transform="translate(1072.50 0)">
-      <rect class="highlight" data-hl-for="headline-word2" data-pad="8" x="-8.00" y="360" width="393.50" height="30" rx="15" fill="#D094E5" opacity="0.85"/>
-      <text id="headline-word2" class="hl" x="0" y="382" font-size="92" font-weight="700" fill="#025A4E" letter-spacing="-2.5">Secured.</text>
+      <g class="item" transform="translate(1187.00 0)">
+      <rect class="highlight" data-hl-for="headline-word2" data-pad="8" x="-8.00" y="360" width="236.00" height="30" rx="15" fill="#D094E5" opacity="0.85"/>
+      <text id="headline-word2" class="hl" x="0" y="382" font-size="92" font-weight="700" fill="#025A4E" letter-spacing="-2.5">Lock.</text>
     </g>
     </g>
     <g id="headline-line3" data-flow="0" data-x="830" data-align="left">
       <g class="item" transform="translate(830.00 0)">
-      <rect class="highlight" data-hl-for="headline-word3" data-pad="8" x="-8.00" y="452" width="329.00" height="30" rx="15" fill="#E8B89C" opacity="0.85"/>
-      <text id="headline-word3" class="hl" x="0" y="474" font-size="92" font-weight="700" fill="#025A4E" letter-spacing="-2.5">Sorted.</text>
+      <rect class="highlight" data-hl-for="headline-word3" data-pad="8" x="-8.00" y="452" width="461.00" height="30" rx="15" fill="#E8B89C" opacity="0.85"/>
+      <text id="headline-word3" class="hl" x="0" y="474" font-size="92" font-weight="700" fill="#025A4E" letter-spacing="-2.5">Look after.</text>
     </g>
     </g>
   </g>

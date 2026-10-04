@@ -11,6 +11,14 @@ There are five landscape banners at 1600 × 900. Every banner carries the brand 
 | 04 | **Your shop has a padlock. Does your website?** | You want your site kept safe, updated and backed up | Ask about website protection |
 | 05 | **You run the business. We'll look after the website.** | You want ongoing care so you can focus on your business | Chat with us on WhatsApp |
 
+### Alternative hooks for banner 02
+
+These are in `../Banner-02-Hook-Options/`. The artwork, copy, CTA and contact details are identical to banner 02. Only the three highlighted words change:
+
+- **A: One team. Launch. Lock. Look after.** An L alliteration: launch the site, lock it down, look after it.
+- **B: One team. Start. Shield. Support.** An S alliteration: start your website, shield it, support it.
+- **C: One team. Ready. Safe. Looked after.** Plain words that describe what the owner gets.
+
 ## Files
 
 - `banner-0X_*.svg` are the layered sources. You can open them in Figma, Illustrator, Inkscape or a browser. Each one has five named top-level groups:

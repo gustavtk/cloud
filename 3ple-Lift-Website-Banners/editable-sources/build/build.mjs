@@ -8,7 +8,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { svgDoc, W, H, SAFE, BRAND_STATEMENT, CONTACT } from './banners.mjs';
-import { BANNERS } from './compositions.mjs';
+import { BANNERS, VARIANTS } from './compositions.mjs';
 
 const require = createRequire(import.meta.url);
 let chromium;
@@ -125,7 +125,7 @@ const page = await browser.newPage({ viewport: { width: W, height: H }, deviceSc
 let failures = 0;
 const report = [];
 
-for (const make of BANNERS) {
+for (const make of [...BANNERS, ...VARIANTS]) {
   const b = make(logoHref);
   const svgPath = path.join(SRC, `${b.id}_${b.slug}.svg`);
   fs.writeFileSync(svgPath, svgDoc({ id: b.id, title: b.title, layers: b.layers }));
@@ -141,7 +141,9 @@ for (const make of BANNERS) {
   const must = [BRAND_STATEMENT, CONTACT.web, CONTACT.whatsapp, CONTACT.email];
   for (const m of must) if (!qa.allText.includes(m)) qa.issues.push(`missing exact text: ${m}`);
   if (!qa.fontsOk) qa.issues.push('fonts did not load');
-  const png = path.join(OUT, `3ple-Lift-Banner-${b.id.slice(-2)}_${b.slug}.png`);
+  const pngDir = b.outDir ? path.join(OUT, b.outDir) : OUT;
+  fs.mkdirSync(pngDir, { recursive: true });
+  const png = path.join(pngDir, `3ple-Lift-Banner-${b.id.slice(-2)}_${b.slug}.png`);
   await page.screenshot({ path: png, clip: { x: 0, y: 0, width: W, height: H } });
   report.push({ banner: b.id, png: path.basename(png), minFontPx: qa.minFont, issues: qa.issues, text: joined });
   failures += qa.issues.length;
