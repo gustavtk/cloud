@@ -24,16 +24,18 @@ These are in `../Banner-02-Hook-Options/`. The artwork, copy, CTA and contact de
 - `banner-0X_*.svg` are the layered sources. You can open them in Figma, Illustrator, Inkscape or a browser. Each one has five named top-level groups:
   - `layer-background`: the cream base, the blurred gradient blobs and the flowing ribbons
   - `layer-illustration`: the artwork. Labels inside it are live text.
-  - `layer-logo`: the logo slot (see below)
+  - `layer-logo`: the original 3ple Lift wordmark, embedded as vector paths (see below)
   - `layer-text`: the headline, the brand statement, the supporting copy and the CTA. Each line is a separate live text object.
   - `layer-contact`: the three contact items, also live text
 - `fonts/` holds Bricolage Grotesque Bold (headlines) and Figtree Regular/Medium/SemiBold/Bold (supporting text), all from Google Fonts. Install them before editing the SVGs in a design tool.
-- `logo/` is where the authentic logo goes. Read `PUT-AUTHENTIC-LOGO-HERE.txt`.
+- `logo/` holds the original logo files: `3ple-lift-logo.svg` (wordmark) and `3ple-lift-mark.svg` (the "3" mark).
 - `build/` holds the generator (`banners.mjs`, `compositions.mjs`, `build.mjs`) and the last QA report (`qa-report.json`).
 
 ## Logo
 
-The authentic logo files couldn't be reached from the environment where these were built. The logo slot is currently filled by a **text stand-in** ("3ple Lift" set in Bricolage Grotesque), with the id `logo-placeholder`. To use the real logo, save it as `logo/3ple-lift-logo.svg` (or `.png`) and run the build below. It is linked into all five banners and the PNGs are re-exported.
+Every banner uses the original wordmark from `logo/3ple-lift-logo.svg`. It's copied into each SVG as vector paths with its original colours, so it stays exact at any size. On the dark banner (04) it sits on a cream badge, because the "ple" lettering is near-black.
+
+The "3" from `logo/3ple-lift-mark.svg` is also used as a large, faint watermark in each banner's background layer (`watermark-3`). It's tinted green at 6-7% opacity on the light banners and mint at 8% on the dark one, and placed in a different open area on each banner. To replace either logo, swap the file in `logo/` (keep the same file name and viewBox) and run the build.
 
 ## Rebuilding the PNGs
 

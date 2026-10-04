@@ -1,12 +1,12 @@
 // The five campaign compositions. Coordinates are in the 1600 x 900 artboard;
 // widths of pills, buttons and the contact row are fitted to the text at build time.
-import { C, W, H, icon, blobs, lines, highlight, statement, cta, contact, logoSlot, browser } from './banners.mjs';
+import { C, W, H, icon, blobs, lines, highlight, statement, cta, contact, logoSlot, watermark, browser } from './banners.mjs';
 
 const softBase = (fill = C.cream) => `<rect id="base" width="${W}" height="${H}" fill="${fill}"/>`;
 
 // ---------------------------------------------------------------- 01
 // "We build it. Then we stay." A care ring keeps circling the finished website.
-function b01(logoHref) {
+function b01() {
   const cx = 1215, cy = 452, rx = 278, ry = 218;
   const pts = [
     { a: 215, ic: 'shield', label: 'Protection', below: false },
@@ -53,7 +53,7 @@ function b01(logoHref) {
     id: 'banner-01',
     slug: 'We-Build-It-Then-We-Stay',
     title: '3ple Lift: We build it. Then we stay.',
-    layers: { background, illustration, logo: logoSlot({ x: 80, y: 82, logoHref }), text, contact: contact({ x: 80, y: 790 }) },
+    layers: { background: background + watermark({ x: 1180, y: 470, h: 560, opacity: 0.07 }), illustration, logo: logoSlot({ x: 80, y: 82 }), text, contact: contact({ x: 80, y: 790 }) },
   };
 }
 
@@ -79,7 +79,7 @@ function serviceHeadline(X, words) {
 
 // ---------------------------------------------------------------- 02
 // "One team. One number to call." Build, Secure and Manage overlap into one team.
-function b02(logoHref, hook = { words: ['Built.', 'Secured.', 'Sorted.'], slug: 'One-Team-Built-Secured-Sorted' }) {
+function b02(hook = { words: ['Built.', 'Secured.', 'Sorted.'], slug: 'One-Team-Built-Secured-Sorted' }) {
   const r = 172;
   const circles = [
     { cx: 292, cy: 352, fill: C.mint, label: 'Build', sub: ['New websites', '& improvements'], ic: 'code', lx: 210, ly: 300 },
@@ -122,13 +122,13 @@ function b02(logoHref, hook = { words: ['Built.', 'Secured.', 'Sorted.'], slug: 
     slug: hook.slug,
     outDir: hook.outDir,
     title: `3ple Lift: One team. ${hook.words.join(' ')}`,
-    layers: { background, illustration, logo: logoSlot({ x: 80, y: 82, logoHref }), text, contact: contact({ x: 80, y: 790 }) },
+    layers: { background: background + watermark({ x: 1250, y: 400, h: 580, opacity: 0.07 }), illustration, logo: logoSlot({ x: 80, y: 82 }), text, contact: contact({ x: 80, y: 790 }) },
   };
 }
 
 // ---------------------------------------------------------------- 03
 // "Old website? Let's give it a lift." A tired site rises up three chevrons into a fresh one.
-function b03(logoHref) {
+function b03() {
   const background = `${softBase()}
     ${blobs([[1340, 260, 360, 300, C.mauve, 0.5], [1420, 700, 340, 240, C.mint, 0.7], [380, 120, 420, 160, C.sky, 0.6], [520, 880, 520, 170, C.peach, 0.55]])}
     <path d="M1100 1000 C 1150 720, 1380 640, 1330 420 S 1480 80, 1700 40" fill="none" stroke="url(#g-ribbon-a)" stroke-width="150" opacity="0.4" filter="url(#blur-l)"/>`;
@@ -173,13 +173,13 @@ function b03(logoHref) {
     id: 'banner-03',
     slug: 'Give-Your-Website-A-Lift',
     title: '3ple Lift: Old website? Let’s give it a lift.',
-    layers: { background, illustration, logo: logoSlot({ x: 80, y: 82, logoHref }), text, contact: contact({ x: 80, y: 790 }) },
+    layers: { background: background + watermark({ x: 600, y: 380, h: 620, opacity: 0.06 }), illustration, logo: logoSlot({ x: 80, y: 82 }), text, contact: contact({ x: 80, y: 790 }) },
   };
 }
 
 // ---------------------------------------------------------------- 04
 // "Your shop has a padlock. Your website needs one too." Night-time scene, website as the padlock.
-function b04(logoHref) {
+function b04() {
   const stars = [
     [930, 140, 2.5], [1010, 96, 1.8], [1480, 150, 2.2], [1330, 98, 1.6], [880, 600, 1.8], [1530, 560, 2], [900, 360, 1.5], [1180, 120, 1.4], [640, 120, 1.6], [760, 90, 2],
   ]
@@ -235,13 +235,13 @@ function b04(logoHref) {
     id: 'banner-04',
     slug: 'Your-Website-Needs-A-Padlock-Too',
     title: '3ple Lift: Your shop has a padlock. Your website needs one too.',
-    layers: { background, illustration, logo: logoSlot({ x: 104, y: 94, h: 50, w: 232, chip: true, logoHref }), text, contact: contact({ x: 1520, y: 818 - 22, align: 'right', theme: 'dark', gap: 40 }) },
+    layers: { background: background + watermark({ x: 650, y: 330, h: 620, fill: C.mint, opacity: 0.08 }), illustration, logo: logoSlot({ x: 106, y: 96, h: 48, chip: true }), text, contact: contact({ x: 1520, y: 818 - 22, align: 'right', theme: 'dark', gap: 40 }) },
   };
 }
 
 // ---------------------------------------------------------------- 05
 // "You run the business. We'll look after the website." Centred headline over a support chat.
-function b05(logoHref) {
+function b05() {
   const background = `${softBase()}
     ${blobs([[300, 600, 420, 300, C.mint, 0.65], [1400, 640, 380, 260, C.peach, 0.5], [800, 60, 600, 160, C.sky, 0.65], [1560, 140, 220, 200, C.mauve, 0.45]])}
     <path d="M-80 420 C 300 300, 600 520, 900 420 S 1400 280, 1700 400" fill="none" stroke="url(#g-ribbon-b)" stroke-width="110" opacity="0.25" filter="url(#blur-l)"/>`;
@@ -281,7 +281,7 @@ function b05(logoHref) {
     id: 'banner-05',
     slug: 'You-Run-The-Business',
     title: '3ple Lift: You run the business. We’ll look after the website.',
-    layers: { background, illustration, logo: logoSlot({ x: 80, y: 82, logoHref }), text, contact: contact({ x: 800, y: 796, align: 'center' }) },
+    layers: { background: background + watermark({ x: 1180, y: 360, h: 620, opacity: 0.07 }), illustration, logo: logoSlot({ x: 80, y: 82 }), text, contact: contact({ x: 800, y: 796, align: 'center' }) },
   };
 }
 
@@ -293,4 +293,4 @@ export const VARIANTS = [
   { words: ['Launch.', 'Lock.', 'Look after.'], slug: 'Hook-A_One-Team-Launch-Lock-Look-After' },
   { words: ['Start.', 'Shield.', 'Support.'], slug: 'Hook-B_One-Team-Start-Shield-Support' },
   { words: ['Ready.', 'Safe.', 'Looked after.'], slug: 'Hook-C_One-Team-Ready-Safe-Looked-After' },
-].map((hook) => (logoHref) => b02(logoHref, { ...hook, outDir: HOOK_DIR }));
+].map((hook) => () => b02({ ...hook, outDir: HOOK_DIR }));

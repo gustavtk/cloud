@@ -22,10 +22,6 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 const SRC = path.resolve(here, '..');
 const OUT = path.resolve(SRC, '..');
 
-const logoFile = ['3ple-lift-logo.svg', '3ple-lift-logo.png'].find((f) => fs.existsSync(path.join(SRC, 'logo', f)));
-const logoHref = logoFile ? `logo/${logoFile}` : null;
-console.log(logoHref ? `Using authentic logo: ${logoHref}` : 'No logo file in editable-sources/logo/ - using text stand-in.');
-
 // Runs inside the page: post-order layout so nested flows/pills resolve inside-out.
 function layoutInPage() {
   const visit = (el) => {
@@ -89,14 +85,14 @@ function qaInPage({ SAFE, W, H }) {
     boxes.push({ id: el.id, kind: el.dataset.qa, ...b });
   });
   // Text-level boxes: every <text> inside text/contact/logo groups must sit in the safe area.
-  document.querySelectorAll('#layer-text text, #layer-contact text, #layer-logo text, #layer-logo image, #layer-illustration text').forEach((t) => {
+  document.querySelectorAll('#layer-text text, #layer-contact text, #layer-illustration text').forEach((t) => {
     const r = t.getBoundingClientRect();
     // 3px tolerance for glyph side-bearings/overhang (e.g. the hook of a "j").
     if (r.left < SAFE - 3 || r.top < SAFE - 3 || r.right > W - SAFE + 3 || r.bottom > H - SAFE + 3)
       issues.push(`outside safe area: "${t.textContent.trim().slice(0, 40)}" [${r.left.toFixed(0)},${r.top.toFixed(0)} → ${r.right.toFixed(0)},${r.bottom.toFixed(0)}]`);
   });
   // Pills, button and logo shapes too.
-  document.querySelectorAll('#layer-text rect.pill-bg, #layer-logo rect').forEach((t) => {
+  document.querySelectorAll('#layer-text rect.pill-bg, #layer-logo rect, #logo-wordmark').forEach((t) => {
     const r = t.getBoundingClientRect();
     if (r.left < SAFE - 0.5 || r.top < SAFE - 0.5 || r.right > W - SAFE + 0.5 || r.bottom > H - SAFE + 0.5)
       issues.push(`shape outside safe area: ${t.closest('[id]').id} [${r.left.toFixed(0)},${r.top.toFixed(0)} → ${r.right.toFixed(0)},${r.bottom.toFixed(0)}]`);
@@ -126,7 +122,7 @@ let failures = 0;
 const report = [];
 
 for (const make of [...BANNERS, ...VARIANTS]) {
-  const b = make(logoHref);
+  const b = make();
   const svgPath = path.join(SRC, `${b.id}_${b.slug}.svg`);
   fs.writeFileSync(svgPath, svgDoc({ id: b.id, title: b.title, layers: b.layers }));
   await page.goto(pathToFileURL(svgPath).href);

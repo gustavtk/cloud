@@ -3,6 +3,9 @@
 // Illustrator or Inkscape: layer-background, layer-illustration, layer-logo,
 // layer-text and layer-contact.
 
+import fs from 'node:fs';
+import { fileURLToPath } from 'node:url';
+
 export const W = 1600;
 export const H = 900;
 export const SAFE = 80;
@@ -175,16 +178,33 @@ export function contact({ x, y, align = 'left', theme = 'light', gap = 46 }) {
     .join('')}</g>`;
 }
 
-// Logo slot. The authentic logo file (editable-sources/logo/3ple-lift-logo.svg or .png)
-// is linked here when present; otherwise a clearly named text stand-in is used.
-export function logoSlot({ x, y, h = 56, w = 260, chip = false, logoHref = null }) {
+// Authentic 3ple Lift artwork, read from editable-sources/logo/ and embedded as vector
+// paths (not linked images) so the logo stays exact and editable in any design tool.
+const LOGO_DIR = fileURLToPath(new URL('../logo/', import.meta.url));
+const readSvg = (f) => fs.readFileSync(LOGO_DIR + f, 'utf8');
+const inner = (svg) => svg.slice(svg.indexOf('>', svg.indexOf('<svg')) + 1, svg.lastIndexOf('</svg>')).trim();
+
+const WORDMARK = { body: inner(readSvg('3ple-lift-logo.svg')), w: 846, h: 213 }; // viewBox 0 0 846 213
+const MARK = { body: inner(readSvg('3ple-lift-mark.svg')), x: 226, y: 110, w: 196, h: 207 }; // viewBox 226 110 196 207
+
+export const logoWidth = (h) => (WORDMARK.w * h) / WORDMARK.h;
+
+// Logo layer: the original wordmark at height h. On dark backgrounds it sits on a cream
+// chip, because the "ple" lettering is near-black in the original artwork.
+export function logoSlot({ x, y, h = 56, chip = false }) {
+  const s = h / WORDMARK.h;
+  const w = logoWidth(h);
   const chipEl = chip
-    ? `<rect id="logo-chip" x="${x - 24}" y="${y - 12}" width="${w + 48}" height="${h + 24}" rx="${(h + 24) / 2}" fill="${C.cream}"/>`
+    ? `<rect id="logo-chip" x="${x - 26}" y="${y - 14}" width="${(w + 52).toFixed(1)}" height="${h + 28}" rx="${(h + 28) / 2}" fill="${C.cream}"/>`
     : '';
-  const art = logoHref
-    ? `<image id="logo-art" href="${logoHref}" x="${x}" y="${y}" width="${w}" height="${h}" preserveAspectRatio="xMinYMid meet"/>`
-    : `<text id="logo-placeholder" class="hl" x="${x}" y="${y + h * 0.76}" font-size="${h * 0.8}" fill="${C.green}" letter-spacing="-1">3ple Lift</text>`;
-  return `<g id="logo" data-qa="logo">${chipEl}${art}</g>`;
+  return `<g id="logo" data-qa="logo">${chipEl}<g id="logo-wordmark" transform="translate(${x} ${y}) scale(${s.toFixed(5)})">${WORDMARK.body}</g></g>`;
+}
+
+// Background watermark: the "3" mark, very large and faint, recoloured to one tint.
+export function watermark({ x, y, h, fill = C.green, opacity = 0.06, rotate = 0 }) {
+  const s = h / MARK.h;
+  const body = MARK.body.replace(/\sfill="[^"]*"/g, '');
+  return `<g id="watermark-3" transform="translate(${x} ${y}) rotate(${rotate}) scale(${s.toFixed(4)}) translate(${-MARK.x} ${-MARK.y})" fill="${fill}" opacity="${opacity}">${body}</g>`;
 }
 
 // A generic browser window used across the campaign.
