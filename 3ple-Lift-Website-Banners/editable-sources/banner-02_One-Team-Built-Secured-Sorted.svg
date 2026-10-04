@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="banner-02" width="1600" height="900" viewBox="0 0 1600 900">
-  <title>3ple Lift: One team. One number to call.</title>
+  <title>3ple Lift: One team. Built. Secured. Sorted.</title>
   <style>
   @font-face { font-family: 'Bricolage Grotesque'; font-weight: 700; src: url('fonts/BricolageGrotesque-Bold.ttf'); }
   @font-face { font-family: 'Figtree'; font-weight: 400; src: url('fonts/Figtree-Regular.ttf'); }
@@ -64,8 +64,25 @@
       </g>
     </g>
   </g>
-    <rect class="highlight" data-hl-for="headline-line2" data-pad="10" x="820.00" y="364" width="597.50" height="30" rx="15" fill="#E8B89C" opacity="0.8"/>
-    <g id="headline" data-qa="text"><text id="headline-line1" class="hl" x="830" y="290" font-size="100" font-weight="700" fill="#025A4E" text-anchor="start" letter-spacing="-2.5">One team.</text><text id="headline-line2" class="hl" x="830" y="384" font-size="100" font-weight="700" fill="#025A4E" text-anchor="start" letter-spacing="-2.5">One number</text><text id="headline-line3" class="hl" x="830" y="478" font-size="100" font-weight="700" fill="#025A4E" text-anchor="start" letter-spacing="-2.5">to call.</text></g>
+    <g id="headline" data-qa="text">
+    <text id="headline-line1" class="hl" x="830" y="290" font-size="92" font-weight="700" fill="#025A4E" letter-spacing="-2.5">One team.</text>
+    <g id="headline-line2" data-flow="26" data-x="830" data-align="left">
+      <g class="item" transform="translate(830.00 0)">
+      <rect class="highlight" data-hl-for="headline-built" data-pad="8" x="-8.00" y="360" width="232.50" height="30" rx="15" fill="#A3DCD4" opacity="0.85"/>
+      <text id="headline-built" class="hl" x="0" y="382" font-size="92" font-weight="700" fill="#025A4E" letter-spacing="-2.5">Built.</text>
+    </g>
+      <g class="item" transform="translate(1072.50 0)">
+      <rect class="highlight" data-hl-for="headline-secured" data-pad="8" x="-8.00" y="360" width="393.50" height="30" rx="15" fill="#D094E5" opacity="0.85"/>
+      <text id="headline-secured" class="hl" x="0" y="382" font-size="92" font-weight="700" fill="#025A4E" letter-spacing="-2.5">Secured.</text>
+    </g>
+    </g>
+    <g id="headline-line3" data-flow="0" data-x="830" data-align="left">
+      <g class="item" transform="translate(830.00 0)">
+      <rect class="highlight" data-hl-for="headline-sorted" data-pad="8" x="-8.00" y="452" width="329.00" height="30" rx="15" fill="#E8B89C" opacity="0.85"/>
+      <text id="headline-sorted" class="hl" x="0" y="474" font-size="92" font-weight="700" fill="#025A4E" letter-spacing="-2.5">Sorted.</text>
+    </g>
+    </g>
+  </g>
     <g id="support" data-qa="text"><text id="support-line1" class="ft" x="830" y="548" font-size="28" font-weight="400" fill="#364442" text-anchor="start" letter-spacing="0">Stop chasing different people for design,</text><text id="support-line2" class="ft" x="830" y="588" font-size="28" font-weight="400" fill="#364442" text-anchor="start" letter-spacing="0">hosting and fixes. We build your website,</text><text id="support-line3" class="ft" x="830" y="628" font-size="28" font-weight="400" fill="#364442" text-anchor="start" letter-spacing="0">help keep it safe and look after it afterward.</text></g>
     <g id="cta" data-qa="cta" data-flow="0" data-x="830" data-align="left">
     <g class="item" data-pill="38,12" transform="translate(868.00 0)">

@@ -6,7 +6,7 @@ There are five landscape banners at 1600 × 900. Every banner carries the brand 
 | # | Hook | Reason to get in touch | CTA |
 |---|------|------------------------|-----|
 | 01 | **We build it. Then we stay.** | You need a new website and a team that won't vanish after launch | Start your new website |
-| 02 | **One team. One number to call.** | You're tired of chasing different people for design, hosting and fixes | Talk to our team |
+| 02 | **One team. Built. Secured. Sorted.** | You're tired of chasing different people for design, hosting and fixes. The three words map to the three services, each highlighted in its Venn circle's colour. | Talk to our team |
 | 03 | **Old website? Let's give it a lift.** | Your existing site is slow, outdated or hard to use | Send us your website link |
 | 04 | **Your shop has a padlock. Does your website?** | You want your site kept safe, updated and backed up | Ask about website protection |
 | 05 | **You run the business. We'll look after the website.** | You want ongoing care so you can focus on your business | Chat with us on WhatsApp |

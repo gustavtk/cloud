@@ -57,6 +57,26 @@ function b01(logoHref) {
   };
 }
 
+// Banner 02 headline: "One team." then the three services as three verdicts, each
+// marked in the colour of its Venn circle (Build = mint, Secure = mauve, Manage = peach).
+function serviceHeadline(X) {
+  const size = 92, base = 290, lh = 92;
+  const word = (id, t, y, fill) => `<g class="item">
+      <rect class="highlight" data-hl-for="${id}" data-pad="8" x="0" y="${y - 22}" width="10" height="30" rx="15" fill="${fill}" opacity="0.85"/>
+      <text id="${id}" class="hl" x="0" y="${y}" font-size="${size}" font-weight="700" fill="${C.green}" letter-spacing="-2.5">${t}</text>
+    </g>`;
+  return `<g id="headline" data-qa="text">
+    <text id="headline-line1" class="hl" x="${X}" y="${base}" font-size="${size}" font-weight="700" fill="${C.green}" letter-spacing="-2.5">One team.</text>
+    <g id="headline-line2" data-flow="26" data-x="${X}" data-align="left">
+      ${word('headline-built', 'Built.', base + lh, C.mint)}
+      ${word('headline-secured', 'Secured.', base + lh, C.mauve)}
+    </g>
+    <g id="headline-line3" data-flow="0" data-x="${X}" data-align="left">
+      ${word('headline-sorted', 'Sorted.', base + lh * 2, C.peach)}
+    </g>
+  </g>`;
+}
+
 // ---------------------------------------------------------------- 02
 // "One team. One number to call." Build, Secure and Manage overlap into one team.
 function b02(logoHref) {
@@ -93,15 +113,14 @@ function b02(logoHref) {
   const X = 830;
   const text = `
     ${statement({ x: X, y: 118, align: 'left' })}
-    ${highlight('headline-line2', 364, 30, C.peach, 10, 0.8)}
-    ${lines({ id: 'headline', cls: 'hl', items: [{ t: 'One team.' }, { t: 'One number' }, { t: 'to call.' }], x: X, y: 290, size: 100, lh: 94, fill: C.green, ls: -2.5, weight: 700 })}
+    ${serviceHeadline(X)}
     ${lines({ id: 'support', items: ['Stop chasing different people for design,', 'hosting and fixes. We build your website,', 'help keep it safe and look after it afterward.'], x: X, y: 548, size: 28, lh: 40, fill: C.ink })}
     ${cta({ x: X, y: 656, label: 'Talk to our team' })}`;
 
   return {
     id: 'banner-02',
-    slug: 'One-Team-One-Number',
-    title: '3ple Lift: One team. One number to call.',
+    slug: 'One-Team-Built-Secured-Sorted',
+    title: '3ple Lift: One team. Built. Secured. Sorted.',
     layers: { background, illustration, logo: logoSlot({ x: 80, y: 82, logoHref }), text, contact: contact({ x: 80, y: 790 }) },
   };
 }
