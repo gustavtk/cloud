@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="banner-05" width="1600" height="900" viewBox="0 0 1600 900">
+  <title>3ple Lift: You run the business. We’ll look after the website.</title>
+  <style>
+  @font-face { font-family: 'Bricolage Grotesque'; font-weight: 700; src: url('fonts/BricolageGrotesque-Bold.ttf'); }
+  @font-face { font-family: 'Figtree'; font-weight: 400; src: url('fonts/Figtree-Regular.ttf'); }
+  @font-face { font-family: 'Figtree'; font-weight: 500; src: url('fonts/Figtree-Medium.ttf'); }
+  @font-face { font-family: 'Figtree'; font-weight: 600; src: url('fonts/Figtree-SemiBold.ttf'); }
+  @font-face { font-family: 'Figtree'; font-weight: 700; src: url('fonts/Figtree-Bold.ttf'); }
+  .hl { font-family: 'Bricolage Grotesque'; font-weight: 700; }
+  .ft { font-family: 'Figtree'; }
+</style>
+  <defs>
+  <filter id="blur-xl" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="95"/></filter>
+  <filter id="blur-l" x="-50%" y="-200%" width="200%" height="500%"><feGaussianBlur stdDeviation="45"/></filter>
+  <filter id="blur-s" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="14"/></filter>
+  <filter id="shadow" x="-50%" y="-80%" width="200%" height="280%"><feDropShadow dx="0" dy="22" stdDeviation="26" flood-color="#364442" flood-opacity="0.16"/></filter>
+  <filter id="shadow-s" x="-50%" y="-100%" width="200%" height="320%"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#364442" flood-opacity="0.16"/></filter>
+  <filter id="shadow-dark" x="-60%" y="-150%" width="220%" height="420%"><feDropShadow dx="0" dy="24" stdDeviation="30" flood-color="#0b1f1c" flood-opacity="0.45"/></filter>
+  <linearGradient id="g-hero" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A3DCD4"/><stop offset="0.55" stop-color="#BDDFF9"/><stop offset="1" stop-color="#D094E5"/></linearGradient>
+  <linearGradient id="g-warm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E8B89C"/><stop offset="1" stop-color="#D094E5"/></linearGradient>
+  <linearGradient id="g-ring" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A3DCD4"/><stop offset="0.5" stop-color="#D094E5"/><stop offset="1" stop-color="#E8B89C"/></linearGradient>
+  <linearGradient id="g-ribbon-a" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#A3DCD4" stop-opacity="0"/><stop offset="0.35" stop-color="#A3DCD4"/><stop offset="0.7" stop-color="#BDDFF9"/><stop offset="1" stop-color="#D094E5" stop-opacity="0.2"/></linearGradient>
+  <linearGradient id="g-ribbon-b" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#E8B89C" stop-opacity="0.1"/><stop offset="0.5" stop-color="#E8B89C"/><stop offset="1" stop-color="#D094E5" stop-opacity="0.3"/></linearGradient>
+</defs>
+  <g id="layer-background"><rect id="base" width="1600" height="900" fill="#EDE7DE"/>
+    <g filter="url(#blur-xl)"><ellipse cx="300" cy="600" rx="420" ry="300" fill="#A3DCD4" opacity="0.65"/><ellipse cx="1400" cy="640" rx="380" ry="260" fill="#E8B89C" opacity="0.5"/><ellipse cx="800" cy="60" rx="600" ry="160" fill="#BDDFF9" opacity="0.65"/><ellipse cx="1560" cy="140" rx="220" ry="200" fill="#D094E5" opacity="0.45"/></g>
+    <path d="M-80 420 C 300 300, 600 520, 900 420 S 1400 280, 1700 400" fill="none" stroke="url(#g-ribbon-b)" stroke-width="110" opacity="0.25" filter="url(#blur-l)"/></g>
+  <g id="layer-illustration" data-qa="illustration">
+    <g id="chat-panel">
+      <rect x="80" y="418" width="680" height="318" rx="34" fill="#FBF8F3" opacity="0.7" stroke="#025A4E" stroke-opacity="0.10" stroke-width="1.5"/>
+      <circle cx="128" cy="462" r="22" fill="#025A4E"/>
+      <g transform="translate(116 450) scale(1)" fill="none" stroke="#EDE7DE" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.6 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></g>
+      <text class="ft" x="164" y="458" font-size="21" font-weight="700" fill="#364442">Your website team</text>
+      <text class="ft" x="164" y="482" font-size="17" font-weight="500" fill="#4C6763">Same people who built your site</text>
+      <line x1="108" y1="506" x2="732" y2="506" stroke="#025A4E" stroke-opacity="0.12" stroke-width="1.5"/>
+      
+    <rect x="306" y="526" width="426" height="74" rx="22" fill="#025A4E" filter="url(#shadow-s)"/>
+    <path d="M706 598 l22 10 -6 -22 z" fill="#025A4E"/>
+    <text class="ft" x="330" y="562" font-size="21" font-weight="500" fill="#EDE7DE">Hi! Can we add our new products</text><text class="ft" x="330" y="590" font-size="21" font-weight="500" fill="#EDE7DE">to the website?</text>
+      
+    <rect x="108" y="614" width="436" height="46" rx="22" fill="#FFFFFF" filter="url(#shadow-s)"/>
+    <path d="M134 658 l-22 10 6 -22 z" fill="#FFFFFF"/>
+    <text class="ft" x="132" y="650" font-size="21" font-weight="500" fill="#364442">Of course. Send them over, we’ve got it.</text>
+      <g>
+        <rect x="108" y="674" width="352" height="44" rx="22" fill="#A3DCD4"/>
+        <g transform="translate(124 684) scale(1)" fill="none" stroke="#025A4E" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></g>
+        <text class="ft" x="158" y="703" font-size="20" font-weight="600" fill="#025A4E">Updates and backup: all done</text>
+      </g>
+    </g></g>
+  <g id="layer-logo"><g id="logo" data-qa="logo"><text id="logo-placeholder" class="hl" x="80" y="124.56" font-size="44.800000000000004" fill="#025A4E" letter-spacing="-1">3ple Lift</text></g></g>
+  <g id="layer-text">
+    <g id="brand-statement" data-qa="statement" data-flow="0" data-x="1520" data-align="right">
+    <g class="item" data-pill="20,24" transform="translate(1021.00 0)">
+      <rect class="pill-bg" x="-20.50" y="83" width="519.50" height="54" rx="27" fill="#FFFFFF" fill-opacity="0.62" stroke="#025A4E" stroke-opacity="0.14" stroke-width="1.5"/>
+      <g class="pill-content">
+        <circle cx="6" cy="110" r="6.5" fill="#A3DCD4"/>
+        <circle cx="22" cy="110" r="6.5" fill="#D094E5"/>
+        <circle cx="38" cy="110" r="6.5" fill="#E8B89C"/>
+        <text class="ft" x="58" y="118" font-size="23" font-weight="600" fill="#025A4E">We build, secure and manage websites.</text>
+      </g>
+    </g>
+  </g>
+    <rect class="highlight" data-hl-for="headline-line2" data-pad="12" x="207.25" y="330" width="1187.00" height="30" rx="15" fill="#A3DCD4" opacity="0.85"/>
+    <g id="headline" data-qa="text"><text id="headline-line1" class="hl" x="800" y="248" font-size="92" font-weight="700" fill="#364442" text-anchor="middle" letter-spacing="-2.5">You run the business.</text><text id="headline-line2" class="hl" x="800" y="348" font-size="92" font-weight="700" fill="#025A4E" text-anchor="middle" letter-spacing="-2.5">We’ll look after the website.</text></g>
+    <g id="support" data-qa="text"><text id="support-line1" class="ft" x="850" y="460" font-size="28" font-weight="400" fill="#364442" text-anchor="start" letter-spacing="0">We host your website, help keep it safe, and</text><text id="support-line2" class="ft" x="850" y="501" font-size="28" font-weight="400" fill="#364442" text-anchor="start" letter-spacing="0">take care of updates, backups and fixes, all by</text><text id="support-line3" class="ft" x="850" y="542" font-size="28" font-weight="400" fill="#364442" text-anchor="start" letter-spacing="0">the same team that built it. Need a change?</text><text id="support-line4" class="ft" x="850" y="583" font-size="28" font-weight="400" fill="#364442" text-anchor="start" letter-spacing="0">Just send us a message.</text></g>
+    <g id="cta" data-qa="cta" data-flow="0" data-x="850" data-align="left">
+    <g class="item" data-pill="38,12" transform="translate(888.00 0)">
+      <rect class="pill-bg" x="-38.00" y="640" width="473.00" height="80" rx="40" fill="#025A4E" filter="url(#shadow-s)"/>
+      <g class="pill-content" data-flow="22" data-x="0" data-align="left">
+        <g class="item" transform="translate(0.00 0)"><text class="ft" x="0" y="690" font-size="28" font-weight="700" fill="#EDE7DE">Chat with us on WhatsApp</text></g>
+        <g class="item" transform="translate(367.00 0)"><circle cx="28" cy="680" r="28" fill="#A3DCD4"/><g transform="translate(14 666) scale(1.1666666666666667)" fill="none" stroke="#025A4E" stroke-width="2.2285714285714286" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></g></g>
+      </g>
+    </g>
+  </g></g>
+  <g id="layer-contact"><g id="contact" data-qa="contact" data-flow="46" data-x="800" data-align="center"><g class="item" id="contact-web" transform="translate(336.00 0)">
+        <circle cx="22" cy="796" r="22" fill="#FFFFFF" fill-opacity="0.75"/><g transform="translate(10 784) scale(1)" fill="none" stroke="#025A4E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/></g>
+        <text class="ft" x="56" y="804.5" font-size="24" font-weight="600" fill="#364442">3plelift.com</text>
+      </g><g class="item" id="contact-whatsapp" transform="translate(568.00 0)">
+        <circle cx="22" cy="796" r="22" fill="#FFFFFF" fill-opacity="0.75"/><g transform="translate(10 784) scale(1)" fill="none" stroke="#025A4E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5a8.5 8.5 0 0 0-7.4 12.7L3.5 20.5l4.4-1.1A8.5 8.5 0 1 0 12 3.5z"/><path d="M8.5 10.5h7M8.5 13.5h4.5"/></g>
+        <text class="ft" x="56" y="804.5" font-size="24" font-weight="600" fill="#364442">WhatsApp: +233 26 463 6393</text>
+      </g><g class="item" id="contact-email" transform="translate(995.00 0)">
+        <circle cx="22" cy="796" r="22" fill="#FFFFFF" fill-opacity="0.75"/><g transform="translate(10 784) scale(1)" fill="none" stroke="#025A4E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7.5l8 6 8-6"/></g>
+        <text class="ft" x="56" y="804.5" font-size="24" font-weight="600" fill="#364442">email@3plelift.com</text>
+      </g></g></g>
+</svg>

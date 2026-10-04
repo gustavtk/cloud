@@ -1,0 +1,14 @@
+Drop the authentic 3ple Lift logo in this folder, named exactly:
+
+  3ple-lift-logo.svg   (preferred)
+  or
+  3ple-lift-logo.png   (transparent background, at least 600 px wide)
+
+Then run, from the editable-sources folder:
+
+  node build/build.mjs
+
+Every banner's logo layer is relinked to this file and all five PNGs are re-exported.
+The logo is fitted inside a 260 x 56 px slot (left-aligned, aspect ratio preserved).
+On the dark banner (04) it sits on a cream rounded chip, so the standard
+dark-green logo stays legible.
